@@ -4,7 +4,11 @@ Get started with [DBRepo](https://www.ifs.tuwien.ac.at/infrastructures/dbrepo/) 
 
 ## Install Docker Engine
 
-on Ubuntu Linux as in https://docs.docker.com/engine/install/ubuntu/.
+as in https://docs.docker.com/engine/install/.
+
+### On Ubuntu Linux
+
+as in https://docs.docker.com/engine/install/ubuntu/.
 
 Check that packages from other version are not installed.
 
@@ -12,23 +16,12 @@ Check that packages from other version are not installed.
 
 should result in `Listing... Done` only.
 
-### Install Docker Engine via Docker Desktop
+Add the Docker keyring.
 
-on Linux as in https://docs.docker.com/desktop/install/linux-install/.
+Add the Docker repository.
 
-Load the KVM kernel module.
+Install the Docker Engine.
 
-	$ modprobe kvm
+Configure the overlay2 storage driver as in https://docs.docker.com/storage/storagedriver/overlayfs-driver/.
 
-Load the matching module based on your processor.
-
-	$ modprobe kvm_amd    # for AMD processors
-	$ modprobe kvm_intel  # for Intel processors
-
-Check that KVM is supported.
-
-	$ kvm-ok
-
-Check that Docker Desktop is not installed already.
-
-	$ apt list --installed docker-desktop
+Configure rootless Docker as in https://docs.docker.com/engine/security/rootless/.
